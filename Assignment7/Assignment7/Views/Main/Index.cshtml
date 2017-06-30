@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <h1>Educational game</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Please choose a game to play.</h2>
+    </div>
+    <div class="col-md-4">
+        <h2>Enter your anme</h2>
+        <form class="glyphicon glyphicon-search" method="get">
+            <input id="User_anme" @*ng-click="FreeSearch(searchTerm)"*@ class="btn btn-primary" type="submit" value="name" />
+        </form>
+    </div>
+    <div class="col-md-4">
+        <form>
+        <h2>Color game</h2>
+        <p>Learn the name of the colors </p>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <form>
+        <h2>Animale names</h2>
+        <p>Learn the name of different animals</p>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <form>
+        <h2>Text punctation</h2>
+        <p>Learn where to put the punctiation</p>
+        </form>
+    </div>
+</div>

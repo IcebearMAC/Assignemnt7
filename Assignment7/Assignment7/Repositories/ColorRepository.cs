@@ -32,6 +32,22 @@ namespace Assignment7.Repositories
             return db.Colors.Where(c => c.Colors == color);
         }
 
+        public IEnumerable<Color> Randomize()
+        {
+            List<int> ColorIDs = db.Colors.Select(c => c.ID).ToList();
+
+            List<int> RandomListID =new List<int>();
+
+            for (int i = 0; i < 4; i += 1)
+            {
+                int randomId = ColorIDs[ new Random().Next(0, ColorIDs.Count)];
+                RandomListID.Add(randomId);
+                ColorIDs.Remove(randomId);
+            }
+
+            return db.Colors.Where(c => RandomListID.Contains(c.ID));
+        }
+
         public void Add(Color color)
         {
             db.Colors.Add(color);
