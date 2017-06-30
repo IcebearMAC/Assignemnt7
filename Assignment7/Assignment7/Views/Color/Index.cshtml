@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="page-header">Welcome to the Colors Test!</div>
+<p>This is the start page for the colors test</p>
+
+<div class="container">
+    <h1>The test</h1>
+    <p>This test will ask a series of questions about colors on which you will be scored.
+     Your score will be displayed at the end of the test</p>
+
+    @Html.ActionLink("Begin Test", "BeginTest", null, new {@class = "btn btn-default"})
+
+</div>
