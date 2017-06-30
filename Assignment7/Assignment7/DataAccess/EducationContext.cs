@@ -12,5 +12,6 @@ namespace Assignment7.DataAccess
         public EducationContext() : base("DefaultConnection") { }
 
         public DbSet<Color> Colors { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
     }
 }
