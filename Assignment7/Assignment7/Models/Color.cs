@@ -15,18 +15,6 @@ namespace Assignment7.Models
         public string Name { get; set; }
 
         [Required]
-        public ColorType Colors { get; set; }
-
-
-        public enum ColorType
-        { 
-            Red,
-            Orange,
-            Yellow,
-            Green,
-            Blue,
-            Indigo,
-            Violet
-        }
+        public System.Drawing.Color Colors { get; set; }
     }
 }

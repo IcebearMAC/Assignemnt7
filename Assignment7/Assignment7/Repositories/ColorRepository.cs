@@ -27,9 +27,9 @@ namespace Assignment7.Repositories
             return db.Colors.Where(c => c.Name == name).FirstOrDefault();
         }
 
-        public IEnumerable<Color> GetByType(Assignment7.Models.Color.ColorType type)
+        public IEnumerable<Color> GetByType(System.Drawing.Color color)
         {
-            return db.Colors.Where(c => c.Colors == type);
+            return db.Colors.Where(c => c.Colors == color);
         }
 
         public void Add(Color color)
