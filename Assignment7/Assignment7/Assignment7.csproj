@@ -181,6 +181,7 @@
     <Content Include="img\20.jpg" />
     <Content Include="img\21.jpg" />
     <Content Include="img\22.jpg" />
+    <Content Include="img\23.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

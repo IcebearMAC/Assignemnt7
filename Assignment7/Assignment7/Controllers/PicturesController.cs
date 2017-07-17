@@ -1,6 +1,7 @@
 ﻿using Assignment7.Models;
 using Assignment7.Repositories;
 using Assignment7.Tests;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Assignment7.Controllers
@@ -15,7 +16,7 @@ namespace Assignment7.Controllers
             ViewBag.NbTests = PicturesTest.NB_TESTS;
             ViewBag.Score = PicturesTest.Score;
 
-            return View(db.Pictures());
+            return View(db.Pictures().OrderBy(p => p.AnimalName));
         }
 
         // GET: Pictures/Test

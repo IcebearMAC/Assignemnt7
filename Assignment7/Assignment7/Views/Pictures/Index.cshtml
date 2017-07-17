@@ -1,4 +1,6 @@
-﻿@using Assignment7.Models
+﻿@using System;
+@using System.Linq;
+@using Assignment7.Models
 
 @model IEnumerable<Picture>
 
@@ -9,28 +11,29 @@
 <h2>List of animals</h2>
 
 @{ if (ViewBag.Score != null)
-    {
-        <h4>Last score: @ViewBag.Score.AmountOfRightAnswers / @ViewBag.NbTests</h4>
-    }
+ {
+    <h4>Last score: @ViewBag.Score.AmountOfRightAnswers / @ViewBag.NbTests</h4>
+ }
 }
 
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayName("Name")
         </th>
         <th>
-            @Html.DisplayName("Name")
         </th>
     </tr>
 
     @foreach (var item in Model)
     {
+        string animalName = item.AnimalName.Substring(0, 1).ToUpper() + item.AnimalName.Substring(1).ToLower();
         <tr>
-            <td>
-                @Html.Image("/img/" + item.PictureName, item.AnimalName, "100")
+            <td style="margin:auto; position: relative">
+                <span style="position:absolute; top:50%; font-size:1.5em">@Html.DisplayName(animalName)</span>
             </td>
             <td>
-                @Html.DisplayName(item.AnimalName)
+                @Html.Image("/img/" + item.PictureName, animalName, "200")
             </td>
         </tr>
     }
@@ -38,7 +41,10 @@
 </table>
 
 <div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
+    <div class="col-md-10">
         <span class="input-group-btn"><button class="btn btn-default" onclick="location.href = '@Url.Action("Test")'" />Let's have a try!</span>
     </div>
+</div>
+
+<div class="col-md-offset-2 col-md-10" style="height:20px">
 </div>
