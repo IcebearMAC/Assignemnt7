@@ -1,5 +1,6 @@
 ﻿using Assignment7.DataAccess;
 using Assignment7.Models;
+using Assignment7.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,7 +11,14 @@ namespace Assignment7.Repositories
 {
     public class ColorRepository
     {
-        EducationContext db = new EducationContext();
+        private EducationContext db = new EducationContext();
+
+        public ColorScoreVM colorScore = new ColorScoreVM();
+
+        public RandomColorsVM randomColors()
+        {
+            return new RandomColorsVM();
+        }
 
         public Color Color(int? id)
         {
@@ -22,11 +30,6 @@ namespace Assignment7.Repositories
             return db.Colors;
         }
 
-        public Color GetByName(string name)
-        {
-            return db.Colors.Where(c => c.Name == name).FirstOrDefault();
-        }
-
         public IEnumerable<Color> GetByType(System.Drawing.Color color)
         {
             return db.Colors.Where(c => c.Colors == color);
@@ -34,36 +37,34 @@ namespace Assignment7.Repositories
 
         public IEnumerable<Color> Randomize()
         {
-            List<int> ColorIDs = db.Colors.Select(c => c.ID).ToList();
+            List<Color> Colors = db.Colors.ToList();
 
-            List<int> RandomListID =new List<int>();
+            List<Color> RandomColors = new List<Color>();
 
             for (int i = 0; i < 4; i += 1)
             {
-                int randomId = ColorIDs[ new Random().Next(0, ColorIDs.Count)];
-                RandomListID.Add(randomId);
-                ColorIDs.Remove(randomId);
+                Color randomColor = Colors[new Random().Next(0, Colors.Count)];
+                RandomColors.Add(randomColor);
+                Colors.Remove(randomColor);
             }
 
-            return db.Colors.Where(c => RandomListID.Contains(c.ID));
+            randomColors().Color1 = RandomColors[0];
+            randomColors().Color2 = RandomColors[1];
+            randomColors().Color3 = RandomColors[2];
+            randomColors().Color4 = RandomColors[3];
+
+            return RandomColors;
         }
 
-        public void Add(Color color)
+        public void CheckAnswer(int? choiceID, int? answerID)
         {
-            db.Colors.Add(color);
-            db.SaveChanges();
+            if (choiceID == answerID)
+            {
+                colorScore.Score += 1;
+                colorScore.NumOfQuestions += 1;
+            }
+            colorScore.NumOfQuestions += 1;
         }
 
-        public void Remove(Color color)
-        {
-            db.Colors.Remove(color);
-            db.SaveChanges();
-        }
-
-        public void Edit(Color color)
-        {
-            db.Entry(color).State = EntityState.Modified;
-            db.SaveChanges();
-        }
     }
 }

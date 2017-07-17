@@ -133,6 +133,8 @@
     <Compile Include="Models\Punctuation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ColorRepository.cs" />
+    <Compile Include="ViewModels\ColorScoreVM.cs" />
+    <Compile Include="ViewModels\RandomColorsVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\EducationDatabase.mdf" />
@@ -175,6 +177,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Color\Index.cshtml" />
+    <Content Include="Views\Color\NewQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706301140090_Initial.resx">
