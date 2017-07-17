@@ -1,0 +1,44 @@
+﻿@using Assignment7.Models
+
+@model IEnumerable<Picture>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of animals</h2>
+
+@{ if (ViewBag.Score != null)
+    {
+        <h4>Last score: @ViewBag.Score / @ViewBag.NbTests</h4>
+    }
+}
+
+<table class="table">
+    <tr>
+        <th>
+        </th>
+        <th>
+            @Html.DisplayName("Name")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.Image("/img/" + item.PictureName, item.AnimalName, "100")
+            </td>
+            <td>
+                @Html.DisplayName(item.AnimalName)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <span class="input-group-btn"><button class="btn btn-default" onclick="location.href = '@Url.Action("Test")'" />Let's have a try!</span>
+    </div>
+</div>

@@ -125,6 +125,7 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PicturesController.cs" />
     <Compile Include="Controllers\PunctuationsController.cs" />
+    <Compile Include="Controllers\ScoresController.cs" />
     <Compile Include="Controllers\TextController.cs" />
     <Compile Include="DataAccess\EducationContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -227,6 +228,8 @@
     <Content Include="Views\Punctuations\Details.cshtml" />
     <Content Include="Views\Punctuations\Edit.cshtml" />
     <Content Include="Views\Punctuations\Index.cshtml" />
+    <Content Include="Views\Scores\Delete.cshtml" />
+    <Content Include="Views\Scores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,0 +1,64 @@
+﻿@using Assignment7.Models
+
+@model Assignment7.Tests.PictureResult
+
+@{
+    ViewBag.Title = "TestPicture";
+}
+
+<h2>What animal is this?</h2>
+
+@{Assignment7.Models.Picture pictureModel = ViewBag.Picture;
+
+    if (ViewBag.RightAnswer != null)
+    {
+        @Html.DisplayName("Wrong! The right answer was " + pictureModel.AnimalName)
+    }
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @{ string score = "";
+            if (ViewBag.NoTest > 1)
+            {
+                score = " (" + ViewBag.Score + " right answers / " + (ViewBag.NoTest - 1) + ")";
+            }
+        }
+        <h4>
+            Question nr. @ViewBag.NoTest / @ViewBag.NbTests@score
+        </h4>
+        <hr />
+
+        <h4>Please enter the animal's name:</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Image("/img/" + pictureModel.PictureName, pictureModel.PictureName, "100")
+            </div>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EnteredName, new { htmlAttributes = new { @class = "form-control", @autofocus = "autofocus" } })
+                @Html.ValidationMessageFor(model => model.EnteredName, "", new { @class = "text-danger" })
+                @Html.Hidden("AnimalName", pictureModel.AnimalName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Validate" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+            }
+
+<div>
+    @Html.ActionLink("Back to the pictures", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

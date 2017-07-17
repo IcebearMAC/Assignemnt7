@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Assignment7.Models.Score>
+
+@{
+    ViewBag.Title = "Your scores";
+}
+
+<h2>Your scores</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountOfRightAnswer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountOfQuestions)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfRightAnswer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfQuestions)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

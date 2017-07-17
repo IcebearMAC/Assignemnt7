@@ -2,6 +2,7 @@
 using Assignment7.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Assignment7.Repositories
@@ -15,9 +16,33 @@ namespace Assignment7.Repositories
             return db.Scores;
         }
 
+        public void Add(Score score)
+        {
+            db.Scores.Add(score);
+            db.SaveChanges();
+        }
+
         public Score Score(Category category)
         {
             return Scores().FirstOrDefault(s => s.Category == category);
+        }
+
+        public Score Score(int? id)
+        {
+            return Scores().FirstOrDefault(s => s.ID == id);
+        }
+
+        public void IncreaseScore(Score score)
+        {
+            score.AmountOfRightAnswer += 1;
+            db.Entry(score).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void Delete(int? id)
+        {
+            db.Scores.Remove(Score(id));
+            db.SaveChanges();
         }
 
         #region IDisposable Support
