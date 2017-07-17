@@ -50,14 +50,17 @@ namespace Assignment7.Tests
                 AmountOfRightAnswers = 0,
                 AmountOfQuestions = NB_TESTS
             };
-
-            new ScoresRepository().Add(score);
         }
 
         public static Picture Next()
         {
             if (!hasBeenTested)
+            {
+                if (pictures == null || noTest >= pictures.Count)
+                    return null;
+
                 return pictures[noTest - 1];
+            }
 
             if (noTest == pictures.Count())
                 return null;
@@ -76,11 +79,19 @@ namespace Assignment7.Tests
 
             if (string.Compare(animalName, enteredName, true) == 0)
             {
-                new ScoresRepository().IncreaseScore(score);
+                score.AmountOfRightAnswers += 1;
                 return true;
             }
 
             return false;
+        }
+
+        public static void End()
+        {
+            if (score != null)
+                new ScoresRepository().Add(score);
+
+            score = null;
         }
     }
 }

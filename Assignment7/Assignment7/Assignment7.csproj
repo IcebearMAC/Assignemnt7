@@ -147,6 +147,7 @@
     <Compile Include="Repositories\ColorRepository.cs" />
     <Compile Include="Tests\PictureResult.cs" />
     <Compile Include="Tests\PicturesTest.cs" />
+    <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\EducationDatabase.mdf" />

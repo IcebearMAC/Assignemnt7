@@ -1,6 +1,7 @@
 ﻿using Assignment7.Models;
 using Assignment7.Repositories;
 using Assignment7.Tests;
+using Assignment7.ViewModels;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -28,8 +29,17 @@ namespace Assignment7.Controllers
 
             Picture nextPicture = PicturesTest.Next();
 
+            if (PicturesTest.Score == null)
+            {
+                PicturesTest.Init();
+                nextPicture = PicturesTest.Next();
+            }
+
             if (nextPicture == null)
+            {
+                PicturesTest.End();
                 return RedirectToAction("Index", "Scores");
+            }
 
             ViewBag.Picture = nextPicture;
             ViewBag.NbTests = PicturesTest.NB_TESTS;
@@ -50,7 +60,16 @@ namespace Assignment7.Controllers
                 if (PicturesTest.Test(result.AnimalName, result.EnteredName))
                     return RedirectToAction("Test", new { @continue = true });
                 else
-                    return RedirectToAction("WrongAnswer", db.Picture(result.AnimalName));
+                {
+                    Picture picture = db.Picture(result.AnimalName);
+                    return RedirectToAction("WrongAnswer",
+                                            new PictureWrongAnswerVM
+                                            {
+                                                EnteredName = result.EnteredName,
+                                                PictureName = picture.PictureName,
+                                                AnimalName = picture.AnimalName
+                                            });
+                }
             else
             {
                 ViewBag.Picture = db.Picture(result.AnimalName);
@@ -62,12 +81,12 @@ namespace Assignment7.Controllers
             }
         }
 
-        public ActionResult WrongAnswer(Picture picture)
+        public ActionResult WrongAnswer(PictureWrongAnswerVM viewModel)
         {
             ViewBag.NbTests = PicturesTest.NB_TESTS;
             ViewBag.NoTest = PicturesTest.NoTest;
 
-            return View(picture);
+            return View(viewModel);
         }
 
         protected override void Dispose(bool disposing)

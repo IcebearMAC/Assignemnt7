@@ -32,13 +32,6 @@ namespace Assignment7.Repositories
             return Scores().FirstOrDefault(s => s.ID == id);
         }
 
-        public void IncreaseScore(Score score)
-        {
-            score.AmountOfRightAnswers += 1;
-            db.Entry(score).State = EntityState.Modified;
-            db.SaveChanges();
-        }
-
         public void Delete(int? id)
         {
             db.Scores.Remove(Score(id));
