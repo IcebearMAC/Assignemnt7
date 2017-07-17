@@ -34,7 +34,7 @@ namespace Assignment7.Repositories
 
         public void IncreaseScore(Score score)
         {
-            score.AmountOfRightAnswer += 1;
+            score.AmountOfRightAnswers += 1;
             db.Entry(score).State = EntityState.Modified;
             db.SaveChanges();
         }

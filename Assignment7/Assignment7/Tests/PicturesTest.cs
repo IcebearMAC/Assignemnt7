@@ -45,8 +45,9 @@ namespace Assignment7.Tests
 
             score = new Score
             {
+                TestDate = DateTime.Now,
                 Category = Category.Animal,
-                AmountOfRightAnswer = 0,
+                AmountOfRightAnswers = 0,
                 AmountOfQuestions = NB_TESTS
             };
 

@@ -3,14 +3,14 @@
 @model IEnumerable<Picture>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Animals";
 }
 
 <h2>List of animals</h2>
 
 @{ if (ViewBag.Score != null)
     {
-        <h4>Last score: @ViewBag.Score / @ViewBag.NbTests</h4>
+        <h4>Last score: @ViewBag.Score.AmountOfRightAnswers / @ViewBag.NbTests</h4>
     }
 }
 

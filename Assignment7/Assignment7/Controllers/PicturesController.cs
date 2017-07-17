@@ -28,7 +28,7 @@ namespace Assignment7.Controllers
             Picture nextPicture = PicturesTest.Next();
 
             if (nextPicture == null)
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Scores");
 
             ViewBag.Picture = nextPicture;
             ViewBag.NbTests = PicturesTest.NB_TESTS;

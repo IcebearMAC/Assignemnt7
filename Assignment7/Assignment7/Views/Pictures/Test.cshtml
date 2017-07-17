@@ -8,24 +8,17 @@
 
 <h2>What animal is this?</h2>
 
-@{Assignment7.Models.Picture pictureModel = ViewBag.Picture;
-
-    if (ViewBag.RightAnswer != null)
-    {
-        @Html.DisplayName("Wrong! The right answer was " + pictureModel.AnimalName)
-    }
-}
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        @{ string score = "";
-            if (ViewBag.NoTest > 1)
-            {
-                score = " (" + ViewBag.Score + " right answers / " + (ViewBag.NoTest - 1) + ")";
-            }
+        @{ Assignment7.Models.Picture pictureModel = ViewBag.Picture;
+         string score = "";
+         if (ViewBag.NoTest > 1)
+         {
+             score = " (" + ViewBag.Score.AmountOfRightAnswers + " right answers / " + (ViewBag.NoTest - 1) + ")";
+         }
         }
         <h4>
             Question nr. @ViewBag.NoTest / @ViewBag.NbTests@score
@@ -53,7 +46,7 @@
             </div>
         </div>
     </div>
-            }
+}
 
 <div>
     @Html.ActionLink("Back to the pictures", "Index")

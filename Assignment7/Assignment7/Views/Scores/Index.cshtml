@@ -9,13 +9,13 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.TestDate)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Category)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AmountOfRightAnswer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AmountOfQuestions)
+            @Html.DisplayName("Result")
         </th>
         <th></th>
     </tr>
@@ -24,13 +24,13 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.TestDate)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AmountOfRightAnswer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AmountOfQuestions)
+                @Html.DisplayName(item.AmountOfRightAnswers + "/" + item.AmountOfQuestions)
             </td>
             <td>
                 @Html.ActionLink("Delete", "Delete", new { id = item.ID })

@@ -131,17 +131,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707111228205_Initial.cs" />
-    <Compile Include="Migrations\201707111228205_Initial.Designer.cs">
-      <DependentUpon>201707111228205_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707161859521_Initial1.cs" />
-    <Compile Include="Migrations\201707161859521_Initial1.Designer.cs">
-      <DependentUpon>201707161859521_Initial1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707162002219_Initial2.cs" />
-    <Compile Include="Migrations\201707162002219_Initial2.Designer.cs">
-      <DependentUpon>201707162002219_Initial2.cs</DependentUpon>
+    <Compile Include="Migrations\201707170846507_Initial.cs" />
+    <Compile Include="Migrations\201707170846507_Initial.Designer.cs">
+      <DependentUpon>201707170846507_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Color.cs" />
@@ -239,14 +231,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707111228205_Initial.resx">
-      <DependentUpon>201707111228205_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707161859521_Initial1.resx">
-      <DependentUpon>201707161859521_Initial1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707162002219_Initial2.resx">
-      <DependentUpon>201707162002219_Initial2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707170846507_Initial.resx">
+      <DependentUpon>201707170846507_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
