@@ -6,6 +6,7 @@ namespace Assignment7.Models
     {
         [Key]
         public int ID { get; set; }
-        public string Path { get; set; }
+        public string PictureName { get; set; }
+        public string AnimalName { get; set; }
     }
 }

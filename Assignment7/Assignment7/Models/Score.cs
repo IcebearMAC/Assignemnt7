@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
-
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Assignment7.Models
 {
@@ -15,7 +10,6 @@ namespace Assignment7.Models
         public int AmountOfQuestions { get; set; }
         public int AmountOfRightAnswer { get; set; }
     }
-
 
     public enum Category
     {

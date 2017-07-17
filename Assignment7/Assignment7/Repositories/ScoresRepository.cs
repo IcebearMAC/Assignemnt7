@@ -6,18 +6,18 @@ using System.Linq;
 
 namespace Assignment7.Repositories
 {
-    public class PicturesRepository : IDisposable
+    public class ScoresRepository : IDisposable
     {
         EducationContext db = new EducationContext();
 
-        public IEnumerable<Picture> Pictures()
+        public IEnumerable<Score> Scores()
         {
-            return db.Pictures;
+            return db.Scores;
         }
 
-        public Picture Picture(string animalName)
+        public Score Score(Category category)
         {
-            return Pictures().FirstOrDefault(p => p.AnimalName == animalName);
+            return Scores().FirstOrDefault(s => s.Category == category);
         }
 
         #region IDisposable Support
