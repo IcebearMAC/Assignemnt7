@@ -2,27 +2,40 @@
 using Assignment7.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Assignment7.Repositories
 {
-    public class PicturesRepository : IDisposable
+    public class ScoresRepository : IDisposable
     {
         EducationContext db = new EducationContext();
 
-        public IEnumerable<Picture> Pictures()
+        public IEnumerable<Score> Scores()
         {
-            List<Picture> pictures = db.Pictures.ToList();
-
-            foreach (Picture picture in pictures)
-                picture.AnimalName = picture.AnimalName.Substring(0, 1).ToUpper() + picture.AnimalName.Substring(1).ToLower();
-
-            return pictures;
+            return db.Scores;
         }
 
-        public Picture Picture(string animalName)
+        public void Add(Score score)
         {
-            return Pictures().FirstOrDefault(p => p.AnimalName == animalName);
+            db.Scores.Add(score);
+            db.SaveChanges();
+        }
+
+        public Score Score(Category category)
+        {
+            return Scores().FirstOrDefault(s => s.Category == category);
+        }
+
+        public Score Score(int? id)
+        {
+            return Scores().FirstOrDefault(s => s.ID == id);
+        }
+
+        public void Delete(int? id)
+        {
+            db.Scores.Remove(Score(id));
+            db.SaveChanges();
         }
 
         #region IDisposable Support

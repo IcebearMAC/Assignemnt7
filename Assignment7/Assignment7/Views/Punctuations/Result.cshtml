@@ -1,0 +1,109 @@
+﻿@*@model Assignment7.ViewModels.PunctuationWrongAnswer
+
+    @{
+        ViewBag.Title = "Result";
+    }
+
+    <h2>Result to the punctuation marks exercise</h2>
+
+    <div>
+        <h4>Your score: @Model.Score.AmountOfRightAnswers / @Model.Score.AmountOfQuestions</h4>
+        <hr />
+
+        <h4>Original text</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            @Html.DisplayFor(model => model.OriginalText)
+        </dl>
+
+        <h4>Your answer</h4>
+        <hr />
+        <div class="dl-horizontal">
+            @{int i = 0;
+                while (i < Model.EnteredText.Length)
+                {
+                    string text = string.Empty;
+                    while (i < Model.EnteredText.Length && Model.EnteredText[i] == Model.OriginalText[i])
+                    {
+                        text += Model.OriginalText[i];
+                        i += 1;
+                    }
+                    <p>
+                        @text
+                        @if (i < Model.EnteredText.Length)
+                        {
+                            <span style="color:red">@Model.EnteredText[i]</span>
+                            i += 1;
+                        }
+                    </p>
+                }
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <span class="input-group-btn">
+                <button class="btn btn-default" onclick="location.href = '@Url.Action("Index", "Scores")'" />Continue
+            </span>
+        </div>
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to start", "Index", "Main")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+
+@model Assignment7.ViewModels.PunctuationWrongAnswer
+
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2>Result to the punctuation marks exercise</h2>
+
+<div class="form-horizontal">
+    <h4>Your score: @Model.Score.AmountOfRightAnswers / @Model.Score.AmountOfQuestions</h4>
+    <hr />
+
+    <h4>Original text</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @Html.DisplayFor(model => model.OriginalText)
+    </dl>
+
+    <h4>Your answer</h4>
+    <hr />
+    <div class="dl-horizontal">
+        <p>
+            @for (int i = 0; i < Model.EnteredText.Length; i += 1)
+            {
+                if (Model.EnteredText[i] == Model.OriginalText[i])
+                {
+                    @Model.EnteredText[i]
+                }
+                else
+                {
+                    <mark>@Model.EnteredText[i]</mark>
+                }
+            }
+        </p>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <button class="btn btn-default" onclick="location.href = '@Url.Action("Index", "Scores")'" />Continue
+        </div>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to start", "Index", "Main")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

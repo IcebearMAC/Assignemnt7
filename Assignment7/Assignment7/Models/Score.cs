@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
-
 
 namespace Assignment7.Models
 {
@@ -11,11 +7,18 @@ namespace Assignment7.Models
     {
         [Key]
         public int ID { get; set; }
-        public Category Category { get; set; }
-        public int AmountOfQuestions { get; set; }
-        public int AmountOfRightAnswer { get; set; }
-    }
 
+        [Display(Name = "Date")]
+        public DateTime TestDate { get; set; }
+        
+        public Category Category { get; set; }
+        
+        [Display(Name="Amount of Questions")]
+        public int AmountOfQuestions { get; set; }
+        
+        [Display(Name = "Amount of Right Answers")]
+        public int AmountOfRightAnswers { get; set; }
+    }
 
     public enum Category
     {

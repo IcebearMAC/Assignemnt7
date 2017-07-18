@@ -13,5 +13,8 @@ namespace Assignment7.DataAccess
 
         public DbSet<Color> Colors { get; set; }
         public DbSet<Picture> Pictures { get; set; }
+        public DbSet<Score> Scores { get; set; }
+
+        public DbSet<Punctuation> Punctuations { get; set; }
     }
 }
