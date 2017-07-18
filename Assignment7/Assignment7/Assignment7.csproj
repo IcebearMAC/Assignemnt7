@@ -145,8 +145,8 @@
     <Compile Include="Repositories\ScoresRepository.cs" />
     <Compile Include="Repositories\PicturesRepository.cs" />
     <Compile Include="Repositories\ColorRepository.cs" />
-    <Compile Include="Tests\PictureResult.cs" />
-    <Compile Include="Tests\PicturesTest.cs" />
+    <Compile Include="Exercises\PictureResult.cs" />
+    <Compile Include="Exercises\PictureExercises.cs" />
     <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
   </ItemGroup>
   <ItemGroup>

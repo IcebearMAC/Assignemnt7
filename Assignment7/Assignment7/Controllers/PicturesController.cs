@@ -1,6 +1,6 @@
 ﻿using Assignment7.Models;
 using Assignment7.Repositories;
-using Assignment7.Tests;
+using Assignment7.Exercises;
 using Assignment7.ViewModels;
 using System.Linq;
 using System.Web.Mvc;
@@ -14,8 +14,8 @@ namespace Assignment7.Controllers
         // GET: Pictures
         public ActionResult Index()
         {
-            ViewBag.NbTests = PicturesTest.NB_TESTS;
-            ViewBag.Score = PicturesTest.Score;
+            ViewBag.NbTests = PictureExercises.NB_TESTS;
+            ViewBag.Score = PictureExercises.Score;
 
             return View(db.Pictures().OrderBy(p => p.AnimalName));
         }
@@ -25,26 +25,26 @@ namespace Assignment7.Controllers
         public ActionResult Test(bool? @continue)
         {
             if (@continue == null)
-                PicturesTest.Init();
+                PictureExercises.Init();
 
-            Picture nextPicture = PicturesTest.Next();
+            Picture nextPicture = PictureExercises.Next();
 
-            if (PicturesTest.Score == null)
+            if (PictureExercises.Score == null)
             {
-                PicturesTest.Init();
-                nextPicture = PicturesTest.Next();
+                PictureExercises.Init();
+                nextPicture = PictureExercises.Next();
             }
 
             if (nextPicture == null)
             {
-                PicturesTest.End();
+                PictureExercises.End();
                 return RedirectToAction("Index", "Scores");
             }
 
             ViewBag.Picture = nextPicture;
-            ViewBag.NbTests = PicturesTest.NB_TESTS;
-            ViewBag.NoTest = PicturesTest.NoTest;
-            ViewBag.Score = PicturesTest.Score;
+            ViewBag.NbTests = PictureExercises.NB_TESTS;
+            ViewBag.NoTest = PictureExercises.NoTest;
+            ViewBag.Score = PictureExercises.Score;
 
             return View();
         }
@@ -57,7 +57,7 @@ namespace Assignment7.Controllers
         public ActionResult Test([Bind(Include = "AnimalName,EnteredName")] PictureResult result)
         {
             if (ModelState.IsValid && result.EnteredName != null && result.EnteredName.Length > 0)
-                if (PicturesTest.Test(result.AnimalName, result.EnteredName))
+                if (PictureExercises.Test(result.AnimalName, result.EnteredName))
                     return RedirectToAction("Test", new { @continue = true });
                 else
                 {
@@ -73,9 +73,9 @@ namespace Assignment7.Controllers
             else
             {
                 ViewBag.Picture = db.Picture(result.AnimalName);
-                ViewBag.NbTests = PicturesTest.NB_TESTS;
-                ViewBag.NoTest = PicturesTest.NoTest;
-                ViewBag.Score = PicturesTest.Score;
+                ViewBag.NbTests = PictureExercises.NB_TESTS;
+                ViewBag.NoTest = PictureExercises.NoTest;
+                ViewBag.Score = PictureExercises.Score;
 
                 return View(result);
             }
@@ -83,8 +83,8 @@ namespace Assignment7.Controllers
 
         public ActionResult WrongAnswer(PictureWrongAnswerVM viewModel)
         {
-            ViewBag.NbTests = PicturesTest.NB_TESTS;
-            ViewBag.NoTest = PicturesTest.NoTest;
+            ViewBag.NbTests = PictureExercises.NB_TESTS;
+            ViewBag.NoTest = PictureExercises.NoTest;
 
             return View(viewModel);
         }

@@ -12,7 +12,12 @@ namespace Assignment7.Repositories
 
         public IEnumerable<Picture> Pictures()
         {
-            return db.Pictures;
+            List<Picture> pictures = db.Pictures.ToList();
+
+            foreach (Picture picture in pictures)
+                picture.AnimalName = picture.AnimalName.Substring(0, 1).ToUpper() + picture.AnimalName.Substring(1).ToLower();
+
+            return pictures;
         }
 
         public Picture Picture(string animalName)

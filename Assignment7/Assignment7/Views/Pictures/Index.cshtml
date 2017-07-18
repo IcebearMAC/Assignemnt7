@@ -1,6 +1,4 @@
-﻿@using System;
-@using System.Linq;
-@using Assignment7.Models
+﻿@using Assignment7.Models
 
 @model IEnumerable<Picture>
 
@@ -27,13 +25,12 @@
 
     @foreach (var item in Model)
     {
-        string animalName = item.AnimalName.Substring(0, 1).ToUpper() + item.AnimalName.Substring(1).ToLower();
         <tr>
             <td style="margin:auto; position: relative">
-                <span style="position:absolute; top:50%; font-size:1.5em">@Html.DisplayName(animalName)</span>
+                <span style="position:absolute; top:50%; font-size:1.5em">@Html.DisplayName(item.AnimalName)</span>
             </td>
             <td>
-                @Html.Image("/img/" + item.PictureName, animalName, "200")
+                @Html.Image("/img/" + item.PictureName, item.AnimalName, "200")
             </td>
         </tr>
     }

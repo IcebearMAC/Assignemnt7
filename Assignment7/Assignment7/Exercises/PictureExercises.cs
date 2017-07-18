@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Assignment7.Tests
+namespace Assignment7.Exercises
 {
-    public static class PicturesTest
+    public static class PictureExercises
     {
         public const int NB_TESTS = 5;
 
