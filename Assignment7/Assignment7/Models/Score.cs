@@ -24,6 +24,8 @@ namespace Assignment7.Models
     {
         Color,
         Animal,
-        Text
+        Text,
+        Word,
+        Calculus
     }
 }
