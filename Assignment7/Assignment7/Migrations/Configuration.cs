@@ -31,7 +31,7 @@ namespace Assignment7.Migrations
                 new Picture { ID = 4, AnimalName = "chameleon", PictureName = "4.jpg" },
                 new Picture { ID = 5, AnimalName = "dog", PictureName = "5.jpg" },
                 new Picture { ID = 6, AnimalName = "dromedary", PictureName = "6.jpg" },
-                new Picture { ID = 7, AnimalName = "elefant", PictureName = "7.jpg" },
+                new Picture { ID = 7, AnimalName = "elephant", PictureName = "7.jpg" },
                 new Picture { ID = 8, AnimalName = "fennec", PictureName = "8.jpg" },
                 new Picture { ID = 9, AnimalName = "fox", PictureName = "9.jpg" },
                 new Picture { ID = 10, AnimalName = "giraffe", PictureName = "10.jpg" },
