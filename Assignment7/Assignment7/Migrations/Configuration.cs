@@ -1,12 +1,12 @@
 namespace Assignment7.Migrations
 {
-    using Assignment7.Models;
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Assignment7.DataAccess.EducationContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataAccess.EducationContext>
     {
         public Configuration()
         {
@@ -48,6 +48,12 @@ namespace Assignment7.Migrations
                 new Picture { ID = 21, AnimalName = "turtle", PictureName = "21.jpg" },
                 new Picture { ID = 22, AnimalName = "zebra", PictureName = "22.jpg" },
                 new Picture { ID = 23, AnimalName = "camel", PictureName = "23.jpg" });
+
+            context.Words.AddOrUpdate(p => p.Id,
+                new Word {Id = 1, Words = "First example of sentence."},
+                new Word { Id= 2 , Words = "Another example of sentence."}
+                );
+
         }
     }
 }
