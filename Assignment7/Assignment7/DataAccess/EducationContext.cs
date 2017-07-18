@@ -17,7 +17,7 @@ namespace Assignment7.DataAccess
 
         public DbSet<Punctuation> Punctuations { get; set; }
 
-        public DbSet<Calculus> Caclulus { get; set; }
+//        public DbSet<Calculus> Caclulus { get; set; }
 
         //public System.Data.Entity.DbSet<Assignment7.Models.Calculus> Calculus { get; set; }
     }

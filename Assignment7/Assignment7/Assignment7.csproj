@@ -129,21 +129,13 @@
     <Compile Include="Controllers\ScoresController.cs" />
     <Compile Include="Controllers\TextController.cs" />
     <Compile Include="DataAccess\EducationContext.cs" />
-    <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
-    <Compile Include="Exercises\Punctuations\Character.cs" />
-    <Compile Include="Exercises\Punctuations\PunctuationResult.cs" />
     <Compile Include="Exercises\CalculusExcercises.cs" />
     <Compile Include="Exercises\CalculusResults.cs" />
+    <Compile Include="Exercises\Punctuations\Character.cs" />
+    <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
+    <Compile Include="Exercises\Punctuations\PunctuationResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707170846507_Initial.cs" />
-    <Compile Include="Migrations\201707170846507_Initial.Designer.cs">
-      <DependentUpon>201707170846507_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707181828065_addpunctuations.cs" />
-    <Compile Include="Migrations\201707181828065_addpunctuations.Designer.cs">
-      <DependentUpon>201707181828065_addpunctuations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Color.cs" />
@@ -152,15 +144,11 @@
     <Compile Include="Models\Punctuation.cs" />
     <Compile Include="Models\Score.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\PunctuationsRepository.cs" />
-    <Compile Include="Repositories\ScoresRepository.cs" />
     <Compile Include="Repositories\CalculusRepository.cs" />
+    <Compile Include="Repositories\PunctuationsRepository.cs" />
     <Compile Include="Repositories\ScoresRepository.cs" />
     <Compile Include="Repositories\PicturesRepository.cs" />
     <Compile Include="Repositories\ColorRepository.cs" />
-    <Compile Include="Exercises\PictureResult.cs" />
-    <Compile Include="Exercises\PictureExercises.cs" />
-    <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
     <Compile Include="Exercises\Pictures\PictureResult.cs" />
     <Compile Include="Exercises\Pictures\PictureExercises.cs" />
     <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
@@ -234,14 +222,12 @@
     <Content Include="Views\Pictures\Test.cshtml" />
     <Content Include="Views\Pictures\Index.cshtml" />
     <Content Include="Views\Pictures\WrongAnswer.cshtml" />
-    <Content Include="Views\Punctuations\Create.cshtml" />
-    <Content Include="Views\Punctuations\Delete.cshtml" />
-    <Content Include="Views\Punctuations\Details.cshtml" />
-    <Content Include="Views\Punctuations\Edit.cshtml" />
     <Content Include="Views\Punctuations\Index.cshtml" />
     <Content Include="Views\Scores\Delete.cshtml" />
     <Content Include="Views\Scores\Index.cshtml" />
+    <Content Include="Views\Punctuations\Test.cshtml" />
     <Content Include="Views\Calculus\Index.cshtml" />
+    <Content Include="Views\Punctuations\Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -249,11 +235,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707170846507_Initial.resx">
-      <DependentUpon>201707170846507_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

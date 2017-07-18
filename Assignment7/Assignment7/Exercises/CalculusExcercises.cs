@@ -8,7 +8,7 @@ namespace Assignment7.Exercises
 {
     public class CalculusExcercises
     {
-
+        private static int noTest = 0;
         private static int FirstNumber = 0;
         private static int SecondNumber = 0;
         private static int Operators = 0;
