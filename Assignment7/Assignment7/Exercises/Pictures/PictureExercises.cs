@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Assignment7.Exercises
+namespace Assignment7.Exercises.Pictures
 {
     public static class PictureExercises
     {
@@ -18,13 +18,13 @@ namespace Assignment7.Exercises
         public static int NoTest
         {
             get { return noTest; }
-            set { }
+            private set { }
         }
 
         public static Score Score
         {
             get { return score; }
-            set { }
+            private set { }
         }
 
         public static void Init()

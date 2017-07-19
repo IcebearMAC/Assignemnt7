@@ -1,5 +1,4 @@
-﻿
-namespace Assignment7.Exercises
+﻿namespace Assignment7.Exercises.Pictures
 {
     public class PictureResult
     {

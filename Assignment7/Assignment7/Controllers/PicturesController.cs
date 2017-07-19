@@ -1,6 +1,6 @@
-﻿using Assignment7.Models;
+﻿using Assignment7.Exercises.Pictures;
+using Assignment7.Models;
 using Assignment7.Repositories;
-using Assignment7.Exercises;
 using Assignment7.ViewModels;
 using System.Linq;
 using System.Web.Mvc;

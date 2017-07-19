@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Assignment7.Models
 {
@@ -10,6 +6,8 @@ namespace Assignment7.Models
     {
         [Key]
         public int ID { get; set; }
+
+        [Required]
         public string Text { get; set; }
     }
 }
