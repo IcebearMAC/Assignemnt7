@@ -7,13 +7,13 @@ namespace Assignment7.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddWords1 : IMigrationMetadata
+    public sealed partial class addpunctuation : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddWords1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addpunctuation));
         
         string IMigrationMetadata.Id
         {
-            get { return "201707181234219_AddWords1"; }
+            get { return "201707190918253_addpunctuation"; }
         }
         
         string IMigrationMetadata.Source

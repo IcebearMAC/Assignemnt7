@@ -139,17 +139,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707180859454_Punctuations.cs" />
-    <Compile Include="Migrations\201707180859454_Punctuations.Designer.cs">
-      <DependentUpon>201707180859454_Punctuations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707181213407_AddWords.cs" />
-    <Compile Include="Migrations\201707181213407_AddWords.Designer.cs">
-      <DependentUpon>201707181213407_AddWords.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707181234219_AddWords1.cs" />
-    <Compile Include="Migrations\201707181234219_AddWords1.Designer.cs">
-      <DependentUpon>201707181234219_AddWords1.cs</DependentUpon>
+    <Compile Include="Migrations\201707190918253_addpunctuation.cs" />
+    <Compile Include="Migrations\201707190918253_addpunctuation.Designer.cs">
+      <DependentUpon>201707190918253_addpunctuation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Color.cs" />
@@ -259,14 +251,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707180859454_Punctuations.resx">
-      <DependentUpon>201707180859454_Punctuations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707181213407_AddWords.resx">
-      <DependentUpon>201707181213407_AddWords.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707181234219_AddWords1.resx">
-      <DependentUpon>201707181234219_AddWords1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707190918253_addpunctuation.resx">
+      <DependentUpon>201707190918253_addpunctuation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
