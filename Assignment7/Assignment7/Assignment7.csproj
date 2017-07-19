@@ -132,6 +132,7 @@
     <Compile Include="Exercises\CalculusExcercises.cs" />
     <Compile Include="Exercises\CalculusResults.cs" />
     <Compile Include="Exercises\Colors\ColorExercises.cs" />
+    <Compile Include="Exercises\Colors\ColorResult.cs" />
     <Compile Include="Exercises\Punctuations\Character.cs" />
     <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
     <Compile Include="Exercises\Punctuations\PunctuationResult.cs" />
