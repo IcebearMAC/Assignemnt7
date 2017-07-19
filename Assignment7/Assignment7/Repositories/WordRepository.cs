@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web;
 using Assignment7.DataAccess;
 using Assignment7.Models;
@@ -14,7 +16,10 @@ namespace Assignment7.Repositories
 
         public Word Word(int id)
         {
-            return db.Words.FirstOrDefault(w => w.Id == id);
+            var word = db.Words.SingleOrDefault(w => w.Id == id);
+            if(word == null)
+                throw new HttpRequestException(HttpStatusCode.NotFound.ToString());
+            return word;
         }
 
         public Word RandomWords()

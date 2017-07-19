@@ -1,4 +1,5 @@
-﻿@model string
+﻿@using Assignment7.Models
+@model string
 
 @{
     ViewBag.Title = "Index";
@@ -6,10 +7,8 @@
 
 <h2>Random Words </h2>
 
-<h3></h3>
-<blockquote>
-    <p><strong>@Model</strong></p>
-</blockquote>
+<h3>@Model</h3>
+
 
 <div class="form-group has-success">
     <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
