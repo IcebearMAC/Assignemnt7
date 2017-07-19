@@ -40,11 +40,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -118,23 +120,39 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CalculusController.cs" />
     <Compile Include="Controllers\ColorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\PicturesController.cs" />
+    <Compile Include="Controllers\PunctuationsController.cs" />
+    <Compile Include="Controllers\ScoresController.cs" />
+    <Compile Include="Controllers\TextController.cs" />
     <Compile Include="DataAccess\EducationContext.cs" />
+    <Compile Include="Exercises\CalculusExcercises.cs" />
+    <Compile Include="Exercises\CalculusResults.cs" />
+    <Compile Include="Exercises\Punctuations\Character.cs" />
+    <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
+    <Compile Include="Exercises\Punctuations\PunctuationResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706301140090_Initial.cs" />
-    <Compile Include="Migrations\201706301140090_Initial.Designer.cs">
-      <DependentUpon>201706301140090_Initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Color.cs" />
+    <Compile Include="Models\ImageHelper.cs" />
+    <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Punctuation.cs" />
+    <Compile Include="Models\Score.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CalculusRepository.cs" />
+    <Compile Include="Repositories\PunctuationsRepository.cs" />
+    <Compile Include="Repositories\ScoresRepository.cs" />
+    <Compile Include="Repositories\PicturesRepository.cs" />
     <Compile Include="Repositories\ColorRepository.cs" />
-    <Compile Include="ViewModels\ColorScoreVM.cs" />
-    <Compile Include="ViewModels\RandomColorsVM.cs" />
+    <Compile Include="Exercises\Pictures\PictureResult.cs" />
+    <Compile Include="Exercises\Pictures\PictureExercises.cs" />
+    <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
+    <Compile Include="ViewModels\PunctuationWrongAnswer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\EducationDatabase.mdf" />
@@ -147,6 +165,29 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\2.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\4.jpg" />
+    <Content Include="img\5.jpg" />
+    <Content Include="img\6.jpg" />
+    <Content Include="img\7.jpg" />
+    <Content Include="img\8.jpg" />
+    <Content Include="img\9.jpg" />
+    <Content Include="img\10.jpg" />
+    <Content Include="img\11.jpg" />
+    <Content Include="img\12.PNG" />
+    <Content Include="img\13.jpg" />
+    <Content Include="img\14.jpg" />
+    <Content Include="img\15.jpg" />
+    <Content Include="img\16.jpg" />
+    <Content Include="img\17.jpg" />
+    <Content Include="img\18.jpg" />
+    <Content Include="img\19.jpg" />
+    <Content Include="img\20.jpg" />
+    <Content Include="img\21.jpg" />
+    <Content Include="img\22.jpg" />
+    <Content Include="img\23.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -177,12 +218,16 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Color\Index.cshtml" />
-    <Content Include="Views\Color\NewQuestion.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706301140090_Initial.resx">
-      <DependentUpon>201706301140090_Initial.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Pictures\Test.cshtml" />
+    <Content Include="Views\Pictures\Index.cshtml" />
+    <Content Include="Views\Pictures\WrongAnswer.cshtml" />
+    <Content Include="Views\Punctuations\Index.cshtml" />
+    <Content Include="Views\Scores\Delete.cshtml" />
+    <Content Include="Views\Scores\Index.cshtml" />
+    <Content Include="Views\Punctuations\Test.cshtml" />
+    <Content Include="Views\Calculus\Index.cshtml" />
+    <Content Include="Views\Punctuations\Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -191,7 +236,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
