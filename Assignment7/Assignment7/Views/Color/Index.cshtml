@@ -1,17 +1,56 @@
-﻿
+﻿@using Assignment7.Models
+
+@model IEnumerable<Color>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Colors";
 }
 
-<h2>Index</h2>
-<div class="page-header">Welcome to the Colors Test!</div>
-<p>This is the start page for the colors test</p>
+<h2>List of colors</h2>
 
-<div class="container">
-    <h1>The test</h1>
-    <p>This test will ask a series of questions about colors on which you will be scored.
-     Your score will be displayed at the end of the test</p>
+@{ if (ViewBag.Score != null)
+ {
+    <h4>Last score: @ViewBag.Score.AmountOfRightAnswers / @ViewBag.NbTests</h4>
+ }
+}
 
-    @Html.ActionLink("Begin Test", "NewQuestion", null, new {@class = "btn btn-default"})
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Name")
+        </th>
+        <th>
+        </th>
+    </tr>
 
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="margin:auto; position: relative">
+                <span style="position:absolute; top:50%; font-size:1.5em">@Html.DisplayName(item.Name)</span>
+            </td>
+            <td>
+                <div style="width: 500px; height: 300px; background-color: @item.Name"></div>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="form-group">
+    <div class="col-md-10">
+        <span class="input-group-btn">
+            <button class="btn btn-default" onclick="location.href = '@Url.Action("Test")'" />Let's have a try!
+        </span>
+    </div>
 </div>
+<div>
+    @Html.ActionLink("Back to start", "Index", "Main")
+</div>
+
+@*<div class="col-md-offset-2 col-md-10" style="height:20px">
+    </div>*@
+
+
+
+

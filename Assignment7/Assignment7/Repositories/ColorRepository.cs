@@ -22,7 +22,7 @@ namespace Assignment7.Repositories
 
         public Color Color(string Name)
         {
-            return db.Colors.Find(Name);
+            return db.Colors.Where(c => c.Name == Name).First(); ;
         }
 
         public IEnumerable<Color> Colors()
