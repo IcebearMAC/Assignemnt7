@@ -125,35 +125,19 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PicturesController.cs" />
-    <Compile Include="Controllers\ScoresController.cs" />
-    <Compile Include="Controllers\MainController.cs" />
-    <Compile Include="Controllers\PicturesController.cs" />
     <Compile Include="Controllers\PunctuationsController.cs" />
     <Compile Include="Controllers\ScoresController.cs" />
     <Compile Include="Controllers\TextController.cs" />
     <Compile Include="Controllers\WordsController.cs" />
     <Compile Include="DataAccess\EducationContext.cs" />
-    <Compile Include="Exercises\CalculusExcercises.cs" />
-    <Compile Include="Exercises\CalculusResults.cs" />
     <Compile Include="Exercises\Colors\ColorExercises.cs" />
     <Compile Include="Exercises\Colors\ColorResult.cs" />
     <Compile Include="Exercises\Punctuations\Character.cs" />
     <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
-    <Compile Include="Exercises\Punctuations\PunctuationResult.cs" />
-    <Compile Include="Exercises\PunctuationResult.cs" />
     <Compile Include="Exercises\CalculusExcercises.cs" />
     <Compile Include="Exercises\CalculusResults.cs" />
-    <Compile Include="Exercises\Colors\ColorExercises.cs" />
-    <Compile Include="Exercises\Colors\ColorResult.cs" />
-    <Compile Include="Exercises\Punctuations\Character.cs" />
-    <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
-    <Compile Include="Exercises\Punctuations\PunctuationResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707170846507_Initial.cs" />
-    <Compile Include="Migrations\201707170846507_Initial.Designer.cs">
-      <DependentUpon>201707170846507_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201707180859454_Punctuations.cs" />
     <Compile Include="Migrations\201707180859454_Punctuations.Designer.cs">
@@ -183,6 +167,7 @@
     <Compile Include="Repositories\ColorRepository.cs" />
     <Compile Include="Exercises\Pictures\PictureResult.cs" />
     <Compile Include="Exercises\Pictures\PictureExercises.cs" />
+    <Compile Include="Repositories\WordRepository.cs" />
     <Compile Include="ViewModels\ColorScoreVM.cs" />
     <Compile Include="ViewModels\ColorWrongAnswerVM.cs" />
     <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
@@ -252,17 +237,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Color\Index.cshtml" />
-    <Content Include="Views\Main\Index.cshtml" />
-    <Content Include="Views\Pictures\Test.cshtml" />
-    <Content Include="Views\Pictures\Index.cshtml" />
-    <Content Include="Views\Pictures\WrongAnswer.cshtml" />
-    <Content Include="Views\Punctuations\Index.cshtml" />
-    <Content Include="Views\Scores\Delete.cshtml" />
-    <Content Include="Views\Scores\Index.cshtml" />
-    <Content Include="Views\Punctuations\Test.cshtml" />
-    <Content Include="Views\Calculus\Index.cshtml" />
-    <Content Include="Views\Punctuations\Result.cshtml" />
     <Content Include="Views\Color\NewQuestion.cshtml" />
     <Content Include="Views\Color\Index.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
@@ -275,7 +249,6 @@
     <Content Include="Views\Punctuations\Test.cshtml" />
     <Content Include="Views\Calculus\Index.cshtml" />
     <Content Include="Views\Punctuations\Result.cshtml" />
-    <Content Include="Views\Color\NewQuestion.cshtml" />
     <Content Include="Views\Words\WordsRandom.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -286,9 +259,6 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707170846507_Initial.resx">
-      <DependentUpon>201707170846507_Initial.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707180859454_Punctuations.resx">
       <DependentUpon>201707180859454_Punctuations.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,10 +269,10 @@
       <DependentUpon>201707181234219_AddWords1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Folder Include="Views\Text\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
