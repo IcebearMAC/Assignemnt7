@@ -131,6 +131,8 @@
     <Compile Include="DataAccess\EducationContext.cs" />
     <Compile Include="Exercises\CalculusExcercises.cs" />
     <Compile Include="Exercises\CalculusResults.cs" />
+    <Compile Include="Exercises\Colors\ColorExercises.cs" />
+    <Compile Include="Exercises\Colors\ColorResult.cs" />
     <Compile Include="Exercises\Punctuations\Character.cs" />
     <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
     <Compile Include="Exercises\Punctuations\PunctuationResult.cs" />
@@ -152,8 +154,10 @@
     <Compile Include="Repositories\ColorRepository.cs" />
     <Compile Include="Exercises\Pictures\PictureResult.cs" />
     <Compile Include="Exercises\Pictures\PictureExercises.cs" />
+    <Compile Include="ViewModels\ColorScoreVM.cs" />
     <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
     <Compile Include="ViewModels\PunctuationWrongAnswer.cs" />
+    <Compile Include="ViewModels\RandomColorsVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\EducationDatabase.mdf" />
@@ -229,6 +233,7 @@
     <Content Include="Views\Punctuations\Test.cshtml" />
     <Content Include="Views\Calculus\Index.cshtml" />
     <Content Include="Views\Punctuations\Result.cshtml" />
+    <Content Include="Views\Color\NewQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
