@@ -35,7 +35,7 @@ namespace Assignment7.Exercises.Punctuations
             score = new Score
             {
                 TestDate = DateTime.Now,
-                Category = Category.Text,
+                Category = Category.PunctuationMarks,
                 AmountOfRightAnswers = 0,
                 AmountOfQuestions = NbPunctuationMarks(punctuation.Text)
             };

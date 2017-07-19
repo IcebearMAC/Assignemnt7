@@ -20,5 +20,6 @@ namespace Assignment7.DataAccess
 //        public DbSet<Calculus> Caclulus { get; set; }
 
         //public System.Data.Entity.DbSet<Assignment7.Models.Calculus> Calculus { get; set; }
+        public DbSet<Word> Words { get; set; }
     }
 }

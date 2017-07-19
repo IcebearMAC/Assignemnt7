@@ -1,12 +1,12 @@
 namespace Assignment7.Migrations
 {
-    using Assignment7.Models;
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Assignment7.DataAccess.EducationContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataAccess.EducationContext>
     {
         public Configuration()
         {
@@ -67,6 +67,12 @@ namespace Assignment7.Migrations
                                                  "I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. " +
                                                  "With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. " +
                                                  "If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me." });
+
+            context.Words.AddOrUpdate(p => p.Id,
+                new Word {Id = 1, Words = "First example of sentence."},
+                new Word { Id= 2 , Words = "Another example of sentence."}
+                );
+
         }
     }
 }
