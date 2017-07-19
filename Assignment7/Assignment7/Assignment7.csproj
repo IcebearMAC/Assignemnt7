@@ -134,8 +134,8 @@
     <Compile Include="Exercises\Colors\ColorResult.cs" />
     <Compile Include="Exercises\Punctuations\Character.cs" />
     <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
-    <Compile Include="Exercises\CalculusExcercises.cs" />
-    <Compile Include="Exercises\CalculusResults.cs" />
+    <Compile Include="Exercises\Calculus\CalculusExcercises.cs" />
+    <Compile Include="Exercises\Calculus\CalculusResults.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -160,6 +160,7 @@
     <Compile Include="Exercises\Pictures\PictureResult.cs" />
     <Compile Include="Exercises\Pictures\PictureExercises.cs" />
     <Compile Include="Repositories\WordRepository.cs" />
+    <Compile Include="ViewModels\CalculusWrongAnswerVM.cs" />
     <Compile Include="ViewModels\ColorScoreVM.cs" />
     <Compile Include="ViewModels\ColorWrongAnswerVM.cs" />
     <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
@@ -229,6 +230,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Color\NewQuestion.cshtml" />
     <Content Include="Views\Color\Index.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Pictures\Test.cshtml" />
@@ -241,8 +243,10 @@
     <Content Include="Views\Calculus\Index.cshtml" />
     <Content Include="Views\Punctuations\Result.cshtml" />
     <Content Include="Views\Words\WordsRandom.cshtml" />
-    <Content Include="Views\Color\Test.cshtml" />
+    <Content Include="Views\Calculus\Test.cshtml" />
+    <Content Include="Views\Calculus\WrongAnswer.cshtml" />
     <Content Include="Views\Color\WrongAnswer.cshtml" />
+    <Content Include="Views\Color\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -256,9 +260,7 @@
       <DependentUpon>201707190918253_addpunctuation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Text\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

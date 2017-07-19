@@ -1,0 +1,35 @@
+﻿@model Assignment7.ViewModels.CalculusWrongAnswerVM
+
+@{
+    ViewBag.Title = "WrongAnswer";
+}
+
+<h2>Result to the calculation exercise</h2>
+
+<div class="form-horizontal">
+    <h4>Expected value</h4>
+    <dl class="dl-horizontal">
+        @Html.DisplayFor(model => model.Answer)
+    </dl>
+
+    <hr />
+
+    <h4>Your answer</h4>
+    <div class="dl-horizontal">
+        @Model.PupilAnswer
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <button class="btn btn-default" onclick="location.href = '@Url.Action("Index", "Scores")'" />Continue
+        </div>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to start", "Index", "Main")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

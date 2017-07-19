@@ -1,0 +1,40 @@
+﻿@model Assignment7.Exercises.Calculus.CalculusResults
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+<p>Calculate the given numbers with the given operator, give your answer in the text field.</p>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="row">
+    <div class="col-md-4">
+        <div class="btn btn-primary" style="width:100%"><h1>@ViewData["firstnumber"]</h1></div>
+    </div>
+    <div class="col-md-4">
+        <div class="btn btn-primary" style="width:100%"><h1>@ViewData["viewoperator"]</h1></div>
+    </div>
+    <div class="col-md-4">
+        <div class="btn btn-primary" style="width:100%"><h1>@ViewData["secondnumber"]</h1></div>
+    </div>
+</div>
+<div><p>  </p></div>
+<div class="row">
+
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.pupilAnswer, new { htmlAttributes = new { @class = "form-control", @autofocus = "autofocus" } })
+            @Html.ValidationMessageFor(model => model.pupilAnswer, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div><p>  </p></div>
+    <div><p>  </p></div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value="Validate" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
