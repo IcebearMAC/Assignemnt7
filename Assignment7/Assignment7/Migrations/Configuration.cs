@@ -52,10 +52,10 @@ namespace Assignment7.Migrations
             context.Punctuations.AddOrUpdate(p => p.ID,
                 new Punctuation { ID = 1, Text = "Example with full stop." },
                 new Punctuation { ID = 2, Text = "Example, with comma" },
-                new Punctuation { ID = 3, Text = "Example with a question mark isn't it?" },
-                new Punctuation { ID = 4, Text = "Example with an exclamation mark damn it!" },
+                new Punctuation { ID = 3, Text = "Can you insert a question mark?" },
+                new Punctuation { ID = 4, Text = "Insert an exclamation mark damn it!" },
                 new Punctuation { ID = 5, Text = "Example with a colon:" },
-                new Punctuation { ID = 6, Text = "Example with a semicolon;" },
+                new Punctuation { ID = 6, Text = "Insert a semicolon; you'll see what's next" },
                 new Punctuation { ID = 7, Text = "Example with both a comma and an exclamation mark, damn it!" },
                 new Punctuation { ID = 8, Text = "Example with both a comma and an question mark, isn't it?" },
                 new Punctuation { ID = 9, Text = "Call me Ishmael. Some years ago- never mind how long precisely- having little or no money in my purse, " +
