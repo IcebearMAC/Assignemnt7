@@ -245,6 +245,8 @@
     <Content Include="Views\Words\WordsRandom.cshtml" />
     <Content Include="Views\Calculus\Test.cshtml" />
     <Content Include="Views\Calculus\WrongAnswer.cshtml" />
+    <Content Include="Views\Color\WrongAnswer.cshtml" />
+    <Content Include="Views\Color\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -258,9 +260,7 @@
       <DependentUpon>201707190918253_addpunctuation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Text\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
