@@ -10,14 +10,14 @@ namespace Assignment7.Controllers
 {
     public class WordsController : Controller
     {
-        WordRepository db=new WordRepository();
+        WordRepository db = new WordRepository();
 
         // GET: Words
         public ActionResult WordsRandom()
         {
             Word word = db.RandomWords();
 
-            return View(model:string.Join(" ", db.Randomize(word)));
+            return View(model: string.Join(" ", db.Randomize(word)));
         }
 
         //Post : Words

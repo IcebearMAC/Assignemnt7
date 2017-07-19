@@ -130,32 +130,18 @@
     <Compile Include="Controllers\TextController.cs" />
     <Compile Include="Controllers\WordsController.cs" />
     <Compile Include="DataAccess\EducationContext.cs" />
-    <Compile Include="Exercises\CalculusExcercises.cs" />
-    <Compile Include="Exercises\CalculusResults.cs" />
     <Compile Include="Exercises\Colors\ColorExercises.cs" />
     <Compile Include="Exercises\Colors\ColorResult.cs" />
     <Compile Include="Exercises\Punctuations\Character.cs" />
     <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
-    <Compile Include="Exercises\Punctuations\PunctuationResult.cs" />
-    <Compile Include="Exercises\PunctuationResult.cs" />
+    <Compile Include="Exercises\CalculusExcercises.cs" />
+    <Compile Include="Exercises\CalculusResults.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707180859454_Punctuations.cs" />
-    <Compile Include="Migrations\201707180859454_Punctuations.Designer.cs">
-      <DependentUpon>201707180859454_Punctuations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707181213407_AddWords.cs" />
-    <Compile Include="Migrations\201707181213407_AddWords.Designer.cs">
-      <DependentUpon>201707181213407_AddWords.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707181234219_AddWords1.cs" />
-    <Compile Include="Migrations\201707181234219_AddWords1.Designer.cs">
-      <DependentUpon>201707181234219_AddWords1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707190856084_ColorModelsChanged.cs" />
-    <Compile Include="Migrations\201707190856084_ColorModelsChanged.Designer.cs">
-      <DependentUpon>201707190856084_ColorModelsChanged.cs</DependentUpon>
+    <Compile Include="Migrations\201707190918253_addpunctuation.cs" />
+    <Compile Include="Migrations\201707190918253_addpunctuation.Designer.cs">
+      <DependentUpon>201707190918253_addpunctuation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Color.cs" />
@@ -243,6 +229,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Color\NewQuestion.cshtml" />
     <Content Include="Views\Color\Index.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Pictures\Test.cshtml" />
@@ -254,10 +241,7 @@
     <Content Include="Views\Punctuations\Test.cshtml" />
     <Content Include="Views\Calculus\Index.cshtml" />
     <Content Include="Views\Punctuations\Result.cshtml" />
-    <Content Include="Views\Color\NOTUSEDTest.cshtml" />
     <Content Include="Views\Words\WordsRandom.cshtml" />
-    <Content Include="Views\Color\Test.cshtml" />
-    <Content Include="Views\Color\WrongAnswer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -267,18 +251,12 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707180859454_Punctuations.resx">
-      <DependentUpon>201707180859454_Punctuations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707190918253_addpunctuation.resx">
+      <DependentUpon>201707190918253_addpunctuation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707181213407_AddWords.resx">
-      <DependentUpon>201707181213407_AddWords.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707181234219_AddWords1.resx">
-      <DependentUpon>201707181234219_AddWords1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707190856084_ColorModelsChanged.resx">
-      <DependentUpon>201707190856084_ColorModelsChanged.cs</DependentUpon>
-    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Text\" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
