@@ -22,7 +22,7 @@ namespace Assignment7.Repositories
 
         public Color Color(string Name)
         {
-            return db.Colors.Find(Name);
+            return db.Colors.Where(c => c.Name == Name).First(); ;
         }
 
         public IEnumerable<Color> Colors()
@@ -54,6 +54,20 @@ namespace Assignment7.Repositories
             randomColors().Color4 = RandomColors[3];
 
             return RandomColors;
+        }
+
+        public bool IsSame(List<Color> FirstList, List<Color> SecondList)
+        {
+            if (FirstList == null && SecondList == null)
+                return true;
+
+            if (FirstList == SecondList)
+                return true;
+
+            if (FirstList[0] == SecondList[0])
+                return true;
+
+            else return false;
         }
 
         public void CheckAnswer(int? choiceID, int? answerID)

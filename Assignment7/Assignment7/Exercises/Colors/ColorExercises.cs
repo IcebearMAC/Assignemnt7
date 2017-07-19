@@ -9,6 +9,8 @@ namespace Assignment7.Exercises.Colors
 {
     public static class ColorExercises
     {
+        private static ColorRepository db = new ColorRepository();
+
         public const int NB_TESTS = 5;
 
         private static int noTest;
@@ -33,29 +35,28 @@ namespace Assignment7.Exercises.Colors
             noTest = 0;
             hasBeenTested = true;
 
-            List<List<Color>> lstColors = new List<List<Color>>();
-
-            for (int i = 0; i < NB_TESTS; i += 1)
-            {
-                lstColors.Add(new ColorRepository().Randomize().ToList());
-            }
-
+            List<Color> lstPrev = new List<Color>();
             colors = new List<List<Color>>();
 
-            while (colors.Count < NB_TESTS && lstColors.Count > 0)
-            {
-                List<Color> chosenColorList = lstColors[new Random().Next(0, lstColors.Count())];
-                colors.Add(chosenColorList);
-                lstColors.Remove(chosenColorList);
+            for (int i = 0; i < NB_TESTS; i += 1)
+            { 
+                List<Color> lstNext;
+                do
+                {
+                    lstNext = db.Randomize().ToList();
+                } while (lstNext.SequenceEqual(lstPrev));
+
+                colors.Add(lstNext);
+                lstPrev = lstNext;
             }
 
-            score = new Score
-            {
-                TestDate = DateTime.Now,
-                Category = Category.Color,
-                AmountOfRightAnswers = 0,
-                AmountOfQuestions = NB_TESTS
-            };
+                score = new Score
+                {
+                    TestDate = DateTime.Now,
+                    Category = Category.Color,
+                    AmountOfRightAnswers = 0,
+                    AmountOfQuestions = NB_TESTS
+                };
         }
 
         public static List<Color> Next()
