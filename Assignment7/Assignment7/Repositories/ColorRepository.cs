@@ -20,9 +20,9 @@ namespace Assignment7.Repositories
             return new RandomColorsVM();
         }
 
-        public Color Color(int? id)
+        public Color Color(string Name)
         {
-            return db.Colors.Find(id);
+            return db.Colors.Find(Name);
         }
 
         public IEnumerable<Color> Colors()
@@ -66,5 +66,23 @@ namespace Assignment7.Repositories
             colorScore.NumOfQuestions += 1;
         }
 
+        #region IDisposable Support
+        private bool disposedValue = false; // Pour détecter les appels redondants
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                db.Dispose();
+                disposedValue = true;
+            }
+        }
+
+        // Ce code est ajouté pour implémenter correctement le modèle supprimable.
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+        #endregion
     }
 }

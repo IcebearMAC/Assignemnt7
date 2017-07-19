@@ -154,6 +154,7 @@
     <Compile Include="Exercises\Pictures\PictureResult.cs" />
     <Compile Include="Exercises\Pictures\PictureExercises.cs" />
     <Compile Include="ViewModels\ColorScoreVM.cs" />
+    <Compile Include="ViewModels\ColorWrongAnswerVM.cs" />
     <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
     <Compile Include="ViewModels\PunctuationWrongAnswer.cs" />
     <Compile Include="ViewModels\RandomColorsVm.cs" />

@@ -22,7 +22,7 @@ namespace Assignment7.Exercises.Colors
             private set { }
         }
 
-        private static Score Score
+        public static Score Score
         {
             get { return score; }
             private set { }
