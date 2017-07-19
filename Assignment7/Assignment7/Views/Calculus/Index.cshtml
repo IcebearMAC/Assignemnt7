@@ -1,45 +1,28 @@
-﻿@model IEnumerable<Assignment7.Models.Calculus>
-
+﻿
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+<div class="page-header">Welcome to a Calculus Test!</div>
+<p>This is the start page for the calculus test</p>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SecondNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MathSymbol)
-        </th>
-        <th></th>
-    </tr>
+<div class="container">
+    <h1>The test</h1>
+    <p>
+        This test will ask a series of questions about colors on which you will be scored.
+        Your score will be displayed at the end of the test
+    </p>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SecondNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MathSymbol)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    <div class="form-group">
+        <div class="col-md-10">
+            <span class="input-group-btn">
+                <button class="btn btn-default" onclick="location.href = '@Url.Action("Test")'" />Let's have a try!
+            </span>
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("Back to start", "Index", "Main")
+    </div>
 
-</table>
+</div>

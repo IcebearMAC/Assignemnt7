@@ -134,8 +134,8 @@
     <Compile Include="Exercises\Colors\ColorResult.cs" />
     <Compile Include="Exercises\Punctuations\Character.cs" />
     <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
-    <Compile Include="Exercises\CalculusExcercises.cs" />
-    <Compile Include="Exercises\CalculusResults.cs" />
+    <Compile Include="Exercises\Calculus\CalculusExcercises.cs" />
+    <Compile Include="Exercises\Calculus\CalculusResults.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -160,6 +160,7 @@
     <Compile Include="Exercises\Pictures\PictureResult.cs" />
     <Compile Include="Exercises\Pictures\PictureExercises.cs" />
     <Compile Include="Repositories\WordRepository.cs" />
+    <Compile Include="ViewModels\CalculusWrongAnswerVM.cs" />
     <Compile Include="ViewModels\ColorScoreVM.cs" />
     <Compile Include="ViewModels\ColorWrongAnswerVM.cs" />
     <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
@@ -242,6 +243,8 @@
     <Content Include="Views\Calculus\Index.cshtml" />
     <Content Include="Views\Punctuations\Result.cshtml" />
     <Content Include="Views\Words\WordsRandom.cshtml" />
+    <Content Include="Views\Calculus\Test.cshtml" />
+    <Content Include="Views\Calculus\WrongAnswer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

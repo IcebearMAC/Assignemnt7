@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Assignment7.Exercises
+namespace Assignment7.Exercises.Calculus
 {
     public class CalculusResults
     {
-        public string xx { get; set; }
-        public string xxx { get; set; }
+        public double pupilAnswer { get; set; }
     }
 }
