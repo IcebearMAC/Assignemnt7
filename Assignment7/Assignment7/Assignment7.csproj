@@ -139,6 +139,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Color.cs" />
+    <Compile Include="Models\EnumDescription.cs" />
     <Compile Include="Models\ImageHelper.cs" />
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Punctuation.cs" />

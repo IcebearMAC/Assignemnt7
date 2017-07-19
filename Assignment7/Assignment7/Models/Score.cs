@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Assignment7.Models
@@ -24,7 +25,8 @@ namespace Assignment7.Models
     {
         Color,
         Animal,
-        Text,
+        [Description("Punctuation Marks")]
+        PunctuationMarks,
         Word,
         Calculus
     }
