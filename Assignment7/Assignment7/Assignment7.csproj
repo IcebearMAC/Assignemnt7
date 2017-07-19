@@ -229,7 +229,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Color\NewQuestion.cshtml" />
     <Content Include="Views\Color\Index.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Pictures\Test.cshtml" />
@@ -242,6 +241,8 @@
     <Content Include="Views\Calculus\Index.cshtml" />
     <Content Include="Views\Punctuations\Result.cshtml" />
     <Content Include="Views\Words\WordsRandom.cshtml" />
+    <Content Include="Views\Color\Test.cshtml" />
+    <Content Include="Views\Color\WrongAnswer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

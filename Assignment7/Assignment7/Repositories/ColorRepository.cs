@@ -56,6 +56,20 @@ namespace Assignment7.Repositories
             return RandomColors;
         }
 
+        public bool IsSame(List<Color> FirstList, List<Color> SecondList)
+        {
+            if (FirstList == null && SecondList == null)
+                return true;
+
+            if (FirstList == SecondList)
+                return true;
+
+            if (FirstList[0] == SecondList[0])
+                return true;
+
+            else return false;
+        }
+
         public void CheckAnswer(int? choiceID, int? answerID)
         {
             if (choiceID == answerID)
