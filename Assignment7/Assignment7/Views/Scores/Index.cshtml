@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Assignment7.Models.Score>
+
+@{
+    ViewBag.Title = "Your scores";
+}
+
+<h2>Your scores</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TestDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayName("Result")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestDate)
+            </td>
+            <td>
+                @Html.DisplayName(Assignment7.Models.EnumDescription.GetEnumDescription(item.Category))
+            </td>
+            <td>
+                @Html.DisplayName(item.AmountOfRightAnswers + "/" + item.AmountOfQuestions)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to start", "Index", "Main")
+</div>
+
+

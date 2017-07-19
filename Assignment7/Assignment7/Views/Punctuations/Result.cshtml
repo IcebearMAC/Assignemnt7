@@ -1,0 +1,45 @@
+﻿@model Assignment7.ViewModels.PunctuationWrongAnswer
+
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2>Result to the punctuation marks exercise</h2>
+
+<div class="form-horizontal">
+    <h4>Your score: @Model.Score.AmountOfRightAnswers / @Model.Score.AmountOfQuestions</h4>
+    <hr />
+
+    <h4>Original text</h4>
+    <div class="dl-horizontal">
+        @Html.DisplayFor(model => model.OriginalText)
+    </div>
+
+    <hr />
+    <h4>Your answer</h4>
+    <div class="dl-horizontal">
+        <p>
+            @for (int i = 0; i < Model.EnteredText.Length; i += 1)
+            {
+                if (Model.EnteredText[i] == Model.OriginalText[i])
+                {
+                    @Model.EnteredText[i]
+                }
+                else
+                {
+                    <span style="background-color:yellow; font-weight:900; font-size:1.2em">@Model.EnteredText[i]</span>
+                }
+            }
+        </p>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <button class="btn btn-default" onclick="location.href = '@Url.Action("Index", "Scores")'" />Continue
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,39 @@
+﻿@using Assignment7.Models
+
+@model Assignment7.ViewModels.PictureWrongAnswerVM
+
+@{
+    ViewBag.Title = "Wrong answer";
+}
+
+<h2>What animal is this?</h2>
+
+<div class="form-horizontal">
+    <h4>Question nr. @ViewBag.NoTest / @ViewBag.NbTests</h4>
+    <hr />
+
+    <h4>Wrong! You entered "@Model.EnteredName", but the right answer was "@Model.AnimalName"</h4>
+    <hr />
+
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.Image("/img/" + Model.PictureName, Model.AnimalName, "300")
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <span class="input-group-btn">
+                <button class="btn btn-default" onclick="location.href = '@Url.Action("Test", new { @continue = true })'" />Continue
+            </span>
+        </div>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to the pictures", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

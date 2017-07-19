@@ -125,10 +125,22 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PicturesController.cs" />
+    <Compile Include="Controllers\ScoresController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\PicturesController.cs" />
     <Compile Include="Controllers\PunctuationsController.cs" />
     <Compile Include="Controllers\ScoresController.cs" />
     <Compile Include="Controllers\TextController.cs" />
+    <Compile Include="Controllers\WordsController.cs" />
     <Compile Include="DataAccess\EducationContext.cs" />
+    <Compile Include="Exercises\CalculusExcercises.cs" />
+    <Compile Include="Exercises\CalculusResults.cs" />
+    <Compile Include="Exercises\Colors\ColorExercises.cs" />
+    <Compile Include="Exercises\Colors\ColorResult.cs" />
+    <Compile Include="Exercises\Punctuations\Character.cs" />
+    <Compile Include="Exercises\Punctuations\PunctuationExercises.cs" />
+    <Compile Include="Exercises\Punctuations\PunctuationResult.cs" />
+    <Compile Include="Exercises\PunctuationResult.cs" />
     <Compile Include="Exercises\CalculusExcercises.cs" />
     <Compile Include="Exercises\CalculusResults.cs" />
     <Compile Include="Exercises\Colors\ColorExercises.cs" />
@@ -139,6 +151,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707170846507_Initial.cs" />
+    <Compile Include="Migrations\201707170846507_Initial.Designer.cs">
+      <DependentUpon>201707170846507_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707180859454_Punctuations.cs" />
+    <Compile Include="Migrations\201707180859454_Punctuations.Designer.cs">
+      <DependentUpon>201707180859454_Punctuations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707181213407_AddWords.cs" />
+    <Compile Include="Migrations\201707181213407_AddWords.Designer.cs">
+      <DependentUpon>201707181213407_AddWords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707181234219_AddWords1.cs" />
+    <Compile Include="Migrations\201707181234219_AddWords1.Designer.cs">
+      <DependentUpon>201707181234219_AddWords1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Color.cs" />
     <Compile Include="Models\EnumDescription.cs" />
@@ -146,6 +174,7 @@
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Punctuation.cs" />
     <Compile Include="Models\Score.cs" />
+    <Compile Include="Models\Word.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CalculusRepository.cs" />
     <Compile Include="Repositories\PunctuationsRepository.cs" />
@@ -155,6 +184,7 @@
     <Compile Include="Exercises\Pictures\PictureResult.cs" />
     <Compile Include="Exercises\Pictures\PictureExercises.cs" />
     <Compile Include="ViewModels\ColorScoreVM.cs" />
+    <Compile Include="ViewModels\ColorWrongAnswerVM.cs" />
     <Compile Include="ViewModels\PictureWrongAnswerVM.cs" />
     <Compile Include="ViewModels\PunctuationWrongAnswer.cs" />
     <Compile Include="ViewModels\RandomColorsVm.cs" />
@@ -234,6 +264,19 @@
     <Content Include="Views\Calculus\Index.cshtml" />
     <Content Include="Views\Punctuations\Result.cshtml" />
     <Content Include="Views\Color\NewQuestion.cshtml" />
+    <Content Include="Views\Color\Index.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Pictures\Test.cshtml" />
+    <Content Include="Views\Pictures\Index.cshtml" />
+    <Content Include="Views\Pictures\WrongAnswer.cshtml" />
+    <Content Include="Views\Punctuations\Index.cshtml" />
+    <Content Include="Views\Scores\Delete.cshtml" />
+    <Content Include="Views\Scores\Index.cshtml" />
+    <Content Include="Views\Punctuations\Test.cshtml" />
+    <Content Include="Views\Calculus\Index.cshtml" />
+    <Content Include="Views\Punctuations\Result.cshtml" />
+    <Content Include="Views\Color\NewQuestion.cshtml" />
+    <Content Include="Views\Words\WordsRandom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -242,6 +285,21 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707170846507_Initial.resx">
+      <DependentUpon>201707170846507_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707180859454_Punctuations.resx">
+      <DependentUpon>201707180859454_Punctuations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707181213407_AddWords.resx">
+      <DependentUpon>201707181213407_AddWords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707181234219_AddWords1.resx">
+      <DependentUpon>201707181234219_AddWords1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Folder Include="Views\Text\" />
   </ItemGroup>
